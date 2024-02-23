@@ -1,0 +1,27 @@
+<form [formGroup]="myForm" (ngSubmit)="submit()">
+
+    <div>
+      <label for="userNameEmail">Nombre de usuario o email</label>
+      <input type="text" formControlName="userNameEmail">
+
+      <div  *ngIf="hasErrors('userNameEmail', 'required')">
+        <p>Nombre de usuario o email requerido<p>
+      </div>
+    </div>
+
+    <div>
+        <label for="password">Contraseña</label>
+        <input type="password" formControlName="password">
+    
+        <div *ngIf="hasErrors('password', 'required')">
+            <p>Contraseña requerida</p>
+        </div>
+
+        <div *ngIf="hasErrors('password', 'minlength')">
+            <p>La Contraseña debe tener al menos 6 caracteres</p>
+        </div>
+        
+    </div>
+    <button [disabled]="myForm.invalid">Enviar</button>
+  </form>
+  

@@ -1,0 +1,47 @@
+<form [formGroup]="myForm" (ngSubmit)="submit()">
+
+    <div>
+      <label for="userName">Nombre de Usuario:</label>
+      <input type="text" formControlName="userName">
+
+      <div  *ngIf="hasErrors('userName', 'required')">
+        <p>Nombre de usuario requerido<p>
+      </div>
+    </div>
+
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" formControlName="email">
+
+      <div *ngIf="hasErrors('email', 'required')">
+        <p>Email requerido</p>
+      </div>  
+
+      <div *ngIf="hasErrors('email', 'email')">
+        <div>Formato de email invalido</div>
+      </div>
+    </div>
+
+    <div>
+        <label for="password">Contraseña</label>
+        <input type="password" formControlName="password">
+    
+        <div *ngIf="hasErrors('password', 'required')">
+            <p>Contraseña requerida</p>
+        </div>
+
+        <div *ngIf="hasErrors('password', 'minlength')">
+            <p>La Contraseña debe tener al menos 6 caracteres</p>
+        </div>
+        
+    </div>
+
+    <div>
+      <label>¿Que tipo de usuario es?</label>
+      <label><input type="radio" formControlName="userType" value="guest">Huesped</label>
+      <label><input type="radio" formControlName="userType" value="host">Arrendador</label>
+    </div>
+
+    <button [disabled]="myForm.invalid">Enviar</button>
+  </form>
+  
