@@ -248,10 +248,10 @@ function App() {
           <div className="h-full w-full relative -top-[45%]">
             <Column images={[images[0], images[1], images[2]]} y={y} />
           </div>
-          <div className="h-full w-full relative  -top-[70%] md:-top-[95%]">
+          <div className="h-full w-full relative  -top-[95%]">
             <Column images={[images[3], images[4], images[5]]} y={y2} />
           </div>
-          <div className="h-full w-full relative -top-[30%] md:-top-[45%]">
+          <div className="h-full w-full relative -top-[30%]">
           <Column images={[images[6], images[7], images[8]]} y={y3} />
           </div>
           <div className="h-full w-full relative -top-[75%]">
@@ -267,7 +267,7 @@ function App() {
 const Column = ({ images, y }) => {
   return (
     <motion.div
-      className="relative w-full min-w-[150px] flex flex-col gap-4 h-full"
+      className="relative w-full min-w-[175px] flex flex-col gap-4 h-full"
       style={{ y }}
     >
       {
@@ -275,7 +275,7 @@ const Column = ({ images, y }) => {
           return (
             <div
               key={i}
-              className='h-[300px] w-[150px] md:h-full md:w-full relative rounded-md overflow-hidden'
+              className='h-[400px] w-[175px] md:h-full md:w-full relative rounded-md overflow-hidden'
             >
               <img
                 src={`/images/${src}`}
