@@ -132,7 +132,7 @@ function App() {
   const [change, setChange] = useState(false);
   useEffect(() => {
     const unsubscribe = scrollYProgress.onChange((latest) => {
-      if (latest >= 0.24) {
+      if (latest >= 0.24 || (latest >= 0.15 && windowSize.width < 1024)) {
         setChange(true);
         if (latest == 1) {
           setCompleted(true);
@@ -188,7 +188,7 @@ function App() {
               )
 
           }
-          <div className="scroll-btn absolute left-0 right-0 bottom-0 -translate-y-[2vh] text-center">
+          <div className="scroll-btn absolute left-0 right-0 bottom-0 pb-16 text-center">
             <a href="#">
               <div className="mouse relative block w-9 h-14 mx-auto mb-5 box-border border border-3 border-white rounded-full">
                 <div className="mouse-pointer absolute block w-2 h-2 bg-white rounded-full"></div>
