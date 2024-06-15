@@ -174,14 +174,14 @@ function App() {
             change == false ?
               (
                 <>
-                  <div className="window-mask flex flex-col rounded-3xl bg-neutral-900 p-12 md:flex-row">
+                  <div className="window-mask flex flex-col bg-neutral-100 p-12 md:flex-row">
                     <div className="mx-auto -mb-7 mt-4 box-content aspect-[5/8] w-[150px] min-w-[150px] rounded-full md:my-auto md:-mr-1 md:ml-auto md:w-[300px] md:min-w-[300px]" />
                   </div>
                 </>
               ) :
               (
                 <>
-                  <div className="window-mask2 flex flex-col rounded-3xl bg-neutral-900 p-12 md:flex-row">
+                  <div className="window-mask2 flex flex-col bg-neutral-100 p-12 md:flex-row">
                     <div className="mx-auto -mb-7 mt-4 box-content aspect-[5/8] w-[150px] min-w-[150px] rounded-full md:my-auto md:-mr-1 md:ml-auto md:w-[300px] md:min-w-[300px]" />
                   </div>
                 </>
@@ -189,18 +189,18 @@ function App() {
 
           }
           <div className="scroll-btn absolute left-0 right-0 bottom-0 pb-16 text-center">
-            <a href="#">
-              <div className="mouse relative block w-9 h-14 mx-auto mb-5 box-border border border-3 border-white rounded-full">
-                <div className="mouse-pointer absolute block w-2 h-2 bg-white rounded-full"></div>
+            <a href="#sec1">
+              <div className="mouse relative block w-9 h-14 mx-auto mb-5 box-border border-[1px] border-[#1F3C77] rounded-full">
+                <div className="mouse-pointer absolute block w-2 h-2 bg-[#1F3C77] rounded-full"></div>
               </div>
-              <p className="text-white">haz scrolling</p>
+              <p className="text-[#1F3C77]">¡Desliza o púlsame!</p>
             </a>
           </div>
         </motion.div>
       </div>
       <div className="mt-[-200vh] h-[200vh] overflow-clip pb-20 relative bg-neutral-100">
         <div className="top-[55%] absolute w-full z-[6] flex items-center justify-center">
-          <img src="logo.webp" className="opacity-95"/>
+          <img src="logo.webp" className="opacity-95 w-1/2 max-w-[700px]"/>
         </div>
 
         <div className="sticky top-1/2 block  bg-neutral-100 md:top-0 z-[5] h-full">
@@ -219,7 +219,7 @@ function App() {
       <div className="bg-neutral-100">
         <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
           <div className="sm:w-1/2 xl:w-1/3 mx-auto text-center mb-6 md:mb-12">
-            <h2 className="text-2xl font-semibold md:text-3xl md:leading-tight text-neutral-700 pt-10">Nuestras divisiones</h2>
+            <h2 id="sec1" className="text-2xl font-semibold md:text-3xl md:leading-tight text-neutral-700 pt-10">Nuestras divisiones</h2>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 lg:gap-6">
             {divisiones.map((item) => (
@@ -241,7 +241,7 @@ function App() {
       
       <div className="bg-neutral-100">
         <div className="w-full mx-auto text-center mb-6 md:mb-12">
-              <h2 className="text-3xl font-semibold md:text-3xl md:leading-tight text-neutral-700 pt-10">Desde 1983 brindando excelencia a nuestros clientes.</h2>
+              <h2 className="text-3xl font-semibold md:text-3xl md:leading-tight text-neutral-700 pt-10">Llevamos desde 1983 brindando excelencia a nuestros clientes.</h2>
         </div>
         <div ref={gallery} className="h-[175vh] bg-neutral-800 relative flex gap-4 p-4 box-border overflow-hidden">
           <div className="absolute w-full h-full z-10 left-0 right-0 top-0 bottom-0 bg-transparent">a</div>
@@ -267,7 +267,7 @@ function App() {
 const Column = ({ images, y }) => {
   return (
     <motion.div
-      className="relative w-full min-w-[120px] flex flex-col gap-4 h-full"
+      className="relative w-full min-w-[150px] flex flex-col gap-4 h-full"
       style={{ y }}
     >
       {
@@ -275,7 +275,7 @@ const Column = ({ images, y }) => {
           return (
             <div
               key={i}
-              className='h-[300px] w-[120px] md:h-full md:w-full relative rounded-md overflow-hidden'
+              className='h-[300px] w-[150px] md:h-full md:w-full relative rounded-md overflow-hidden'
             >
               <img
                 src={`/images/${src}`}
